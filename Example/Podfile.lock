@@ -1,0 +1,53 @@
+PODS:
+  - Alamofire (3.4.0)
+  - AlamofireJsonToObjects (1.6.0):
+    - Alamofire
+    - EVReflection
+  - EVReflection (2.30.1)
+  - JHHttpClient (0.0.1):
+    - Alamofire
+    - AlamofireJsonToObjects
+    - EVReflection
+  - Nimble (3.2.0)
+  - Quick (0.9.2)
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
+  - AlamofireJsonToObjects (from `https://github.com/evermeer/AlamofireJsonToObjects.git`)
+  - EVReflection (from `https://github.com/evermeer/EVReflection.git`)
+  - JHHttpClient (from `../`)
+  - Nimble (~> 3.0)
+  - Quick (~> 0.8)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireJsonToObjects:
+    :git: https://github.com/evermeer/AlamofireJsonToObjects.git
+  EVReflection:
+    :git: https://github.com/evermeer/EVReflection.git
+  JHHttpClient:
+    :path: ../
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 24df4a7acff6b768914b67a5d59be0ccca32c370
+    :git: https://github.com/Alamofire/Alamofire.git
+  AlamofireJsonToObjects:
+    :commit: 99551acfd0ee3657ce6df6bc498c8d6df39ae116
+    :git: https://github.com/evermeer/AlamofireJsonToObjects.git
+  EVReflection:
+    :commit: 6f312a2fe84bd2cc9441974d17e78f3010ea491b
+    :git: https://github.com/evermeer/EVReflection.git
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  AlamofireJsonToObjects: e5155c1c58493c44d7ebe56bbb1aa65d95e82c68
+  EVReflection: cbadc6ef7c077d86efc1a47fa23f1c9d0a5540dc
+  JHHttpClient: 387b104645df4556b854d8445348e8e935fd06b7
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
+
+PODFILE CHECKSUM: 0599e3c82ecd4ce3f06f19051833233032f2dbd5
+
+COCOAPODS: 1.0.0

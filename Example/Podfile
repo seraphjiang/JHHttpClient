@@ -2,6 +2,10 @@ use_frameworks!
 
 target 'JHHttpClient_Example' do
   pod 'JHHttpClient', :path => '../'
+  
+  pod 'EVReflection', :git => 'https://github.com/evermeer/EVReflection.git'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+  pod 'AlamofireJsonToObjects', :git => 'https://github.com/evermeer/AlamofireJsonToObjects.git'
 
   target 'JHHttpClient_Tests' do
     inherit! :search_paths

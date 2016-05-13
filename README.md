@@ -20,6 +20,23 @@ it, simply add the following line to your Podfile:
 pod "JHHttpClient"
 ```
 
+## Instruction
+
+Please add entry to your project's info.plist, App Transport Security Settings to enable http://
+
+```swift
+JHHttpClient.invoke(self.api.text!) { (response, error) in
+    print(response)
+    if let jsonResult = response as? Dictionary<String, AnyObject> {
+        print(jsonResult)
+        print("-----")
+        print(jsonResult.description)
+        let str = jsonResult.description
+        self.response.text = str
+    }
+}
+```
+
 ## Author
 
 jianghuan, seraphjiang@gmail.com

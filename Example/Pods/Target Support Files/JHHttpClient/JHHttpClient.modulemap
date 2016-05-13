@@ -1,0 +1,6 @@
+framework module JHHttpClient {
+  umbrella header "JHHttpClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
