@@ -39,12 +39,13 @@ public class JHHttpClient: NSObject {
     }
     
     /// auto pick get/post Method for restful api, return as EVObject
-    public class func invokeObject<T: EVObject>(
+    static func invokeObject<T: EVObject>(
         url:String,
-        parameters:[String: AnyObject]? = nil,
+        parameters:T? = nil,
         complete:(obj: T?, error: NSError?) -> Void)
         -> Void{
             if parameters == nil {
+                
                 Alamofire.request(Method.GET, url, parameters: nil, encoding: ParameterEncoding.JSON, headers: nil)
                     .responseObject(completionHandler: { (result: Result<T, NSError>) in
                         print(result)
@@ -53,11 +54,12 @@ public class JHHttpClient: NSObject {
             }
             else {
                 
-                Alamofire.request(Method.POST, url, parameters: parameters, encoding: ParameterEncoding.JSON, headers: nil)
+                Alamofire.request(Method.POST, url, parameters: parameters?.toJsonString().toDictionary(), encoding: ParameterEncoding.JSON, headers: nil)
                     .responseObject(completionHandler: { (result: Result<T, NSError>) in
                         print(result)
                         complete(obj: result.value, error: result.error)
                     })
             }
+            
     }
 }
