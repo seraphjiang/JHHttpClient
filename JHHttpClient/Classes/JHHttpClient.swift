@@ -17,18 +17,15 @@ public class JHHttpClient: NSObject {
         parameters:[String: AnyObject]? = nil,
         complete:(response: AnyObject?, error: NSError?) -> Void)
         -> Void{
-            if parameters == nil {
-                Alamofire.request(Method.GET, url, parameters: nil, encoding: ParameterEncoding.JSON, headers: nil)
-                
+            if parameters == nil {                
                 Alamofire.request(Method.GET, url, parameters: nil, encoding: ParameterEncoding.JSON, headers: nil)
                     .responseJSON(completionHandler: { (response) in
-                        print(response.data)
                         print(response.result)
                         complete(response: response.result.value, error: response.result.error)
                     })
             }
             else {
-                
+                print("JHHttpClient:\n", parameters)
                 Alamofire.request(Method.POST, url, parameters: parameters, encoding: ParameterEncoding.JSON, headers: nil)
                     .responseJSON(completionHandler: { (response) in
                         print(response.data)
@@ -45,7 +42,6 @@ public class JHHttpClient: NSObject {
         complete:(obj: T?, error: NSError?) -> Void)
         -> Void{
             if parameters == nil {
-                
                 Alamofire.request(Method.GET, url, parameters: nil, encoding: ParameterEncoding.JSON, headers: nil)
                     .responseObject(completionHandler: { (result: Result<T, NSError>) in
                         print(result)
@@ -53,7 +49,7 @@ public class JHHttpClient: NSObject {
                     })
             }
             else {
-                
+                print("JHHttpClient:\n", parameters)
                 Alamofire.request(Method.POST, url, parameters: parameters?.toJsonString().toDictionary(), encoding: ParameterEncoding.JSON, headers: nil)
                     .responseObject(completionHandler: { (result: Result<T, NSError>) in
                         print(result)
