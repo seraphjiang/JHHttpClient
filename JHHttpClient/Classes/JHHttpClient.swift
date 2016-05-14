@@ -39,7 +39,7 @@ public class JHHttpClient: NSObject {
     }
     
     /// auto pick get/post Method for restful api, return as EVObject
-    static func invokeObject<T: EVObject>(
+    public static func invokeObject<T: EVObject>(
         url:String,
         parameters:T? = nil,
         complete:(obj: T?, error: NSError?) -> Void)
